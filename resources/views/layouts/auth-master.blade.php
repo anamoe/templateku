@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>@yield('title', 'Skydash') &mdash; {{ env('APP_NAME') }}</title>
+    <title>@yield('title', 'Admins') &mdash; {{ env('APP_NAME') }}</title>
 
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('assets/vendors/feather/feather.css')}}">
@@ -17,7 +17,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('assets/css/vertical-layout-light/style.css')}}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/kop.png')}}" />
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png')}}" />
     @yield('css')
 </head>
 
@@ -29,7 +29,7 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                             <div class="brand-logo">
-                                <img src="{{ asset('assets/images/kop.png')}}" alt="logo">
+                                <img src="{{ asset('assets/images/logo.png')}}" alt="logo">
                             </div>
                             @yield('content')
                         </div>

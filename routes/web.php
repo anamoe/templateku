@@ -17,6 +17,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin',function(){
+Route::get('/admin', function () {
     return view('layouts.admin-master');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/login', 'AuthController@login')->middleware('guest')->name('login');
+Route::post('/postLogin', 'AuthController@doLogin')->name('postLogin');
+Route::get('/register', 'AuthController@register')->middleware('guest')->name('register');
+Route::post('/postRegister', 'AuthController@doRegister')->name('postRegister');
+Route::get('/logout', 'AuthController@logout')->name('logout');
+
+Route::group(['middleware' => ['auth', 'admin']],function(){
+    Route::get('/admin/dashboard', 'Wadir3Controller@index')->name('admin.index');
+    Route::get('/admin/laporan', 'Wadir3Controller@laporan')->name('admin.laporan');
+    
 });
